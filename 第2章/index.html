@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html中的JavaScript</title>
+</head>
+<body>
+    <!-- 推迟执行 -->
+    <script defer src="./defer.js"></script>  
+    <!-- 动态加载脚本 -->
+    <script>
+        let script  = document.createElement('script')
+        script.src = './extra.js'
+        script.async = false   // 设置为同步加载
+        document.head.appendChild(script)
+    </script>
+    
+    <script>
+            console.log('Hello')
+    </script>
+    <script type="module">
+        import fn1 from './export.js'
+        fn1()
+    </script>
+    <script src="./import.js" type="module"></script>
+
+</body>
+</html>
